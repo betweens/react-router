@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "react-router-packages",
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js",
+    "build": "node ./scripts/build.js",
+    "clean": "lerna run clean",
+    "start": "cd website && npm start",
+    "test": "lerna run test --stream"
+  },
+  "devDependencies": {
+    "lerna": "2.2.0"
+  }
+}
