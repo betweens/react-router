@@ -1,13 +1,13 @@
 # Quick Start
 
-You probably want to read one of these instead:
+您可能想要阅读其中之一:
 
 - [Web Quick Start](../../../react-router-dom/docs/guides/quick-start.md)
 - [Native Quick Start](../../../react-router-native/docs/guides/quick-start.md)
 
-## Installation
+## 安装
 
-React Router Core is published to [npm](https://npm.im/react-router) so you can install it with either `npm` or [`yarn`](https://yarnpkg.com).
+React Router Core发布到[npm]（https://npm.im/react-router），所以你可以用`npm`或[`yarn`]（https://yarnpkg.com）来安装它。
 
 ```sh
 npm install react-router

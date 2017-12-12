@@ -53,7 +53,7 @@ const AnimationExample = () => (
                 {/* Without this `Route`, we would get errors during
                     the initial transition from `/` to `/hsl/10/90/50`
                 */}
-                <Route render={() => <div>Not Found</div>} />
+                <Route render={() => <div>未找到</div>} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>

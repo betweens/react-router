@@ -27,13 +27,13 @@ const OldSchoolMenuLink = ({ label, to, activeOnlyWhenExact }) => (
 
 const Home = () => (
   <div>
-    <h2>Home</h2>
+    <h2>主页</h2>
   </div>
 )
 
 const About = () => (
   <div>
-    <h2>About</h2>
+    <h2>关于</h2>
   </div>
 )
 

@@ -1,11 +1,11 @@
 # Testing
 
-React Router relies on React context to work. This affects how you can
-test your components that use our components.
+React Router依靠React上下文来工作。 这会影响你的方式
+测试使用我们的组件的组件。
 
 ## Context
 
-If you try to unit test one of your components that renders a `<Link>` or a `<Route>`, etc. you'll get some errors and warnings about context.  While you may be tempted to stub out the router context yourself, we recommend you wrap your unit test in a `<StaticRouter>` or a `<MemoryRouter>`. Check it out:
+如果你试图单元测试一个呈现`<Link>`或`<Route>`的组件，你会得到一些有关上下文的错误和警告。 虽然你可能会试图自己去掉路由器上下文，但我们建议你把你的单元测试包装在一个`<StaticRouter>`或`<MemoryRouter>`中。 一探究竟：
 
 ```jsx
 class Sidebar extends Component {
@@ -51,13 +51,13 @@ test('it expands when the button is clicked', () => {
 })
 ```
 
-That's all there is to it.
+这里的所有都是它的。
 
-## Starting at specific routes
+## 从特定routes开始
 
-`<MemoryRouter>` supports the `initialEntries` and `initialIndex` props,
-so you can boot up an app (or any smaller part of an app) at a specific
-location.
+`<MemoryRouter>`支持`initialEntries`和`initialIndex`props，
+所以你可以启动一个应用程序（或一个应用程序的任何较小的部分）在一个特定的
+位置。
 
 ```js
 test('current user is active in sidebar', () => {
@@ -70,9 +70,9 @@ test('current user is active in sidebar', () => {
 })
 ```
 
-## Navigating
+## 导航
 
-We have a lot of tests that the routes work when the location changes, so you probably don't need to test this stuff. But if you must, since everything happens in render, we do something a little clever like this:
+我们有很多测试，当位置改变时，routes工作，所以你可能不需要测试这个东西。 但是，如果你必须的话，因为所有事情都是在渲染中发生的，所以我们做一些有点聪明的事情：
 
 ```js
 import { render, unmountComponentAtNode } from 'react-dom'
@@ -80,7 +80,7 @@ import React from 'react'
 import { Route, Link, MemoryRouter } from 'react-router-dom'
 import { Simulate } from 'react-addons-test-utils'
 
-// a way to render any part of your app inside a MemoryRouter
+// 一种在MemoryRouter中呈现应用的任何部分的方法
 // you pass it a list of steps to execute when the location
 // changes, it will call back to you with stuff like
 // `match` and `location`, and `history` so you can control
@@ -137,8 +137,8 @@ const renderTestSequence = ({
   render(<Test/>, div)
 }
 
-// our Subject, the App, but you can test any sub
-// section of your app too
+// 我们的主体，应用程序，但你可以测试任何分
+// 你的应用程序的一部分
 const App = () => (
   <div>
     <Route exact path="/" render={() => (
@@ -155,7 +155,7 @@ const App = () => (
   </div>
 )
 
-// the actual test!
+// 实际测试！
 it('navigates around', (done) => {
 
   renderTestSequence({

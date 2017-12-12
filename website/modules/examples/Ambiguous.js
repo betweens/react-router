@@ -10,7 +10,7 @@ const AmbiguousExample = () => (
   <Router>
     <div>
       <ul>
-        <li><Link to="/about">About Us (static)</Link></li>
+        <li><Link to="/about">关于我们 (static)</Link></li>
         <li><Link to="/company">Company (static)</Link></li>
         <li><Link to="/kim">Kim (dynamic)</Link></li>
         <li><Link to="/chris">Chris (dynamic)</Link></li>

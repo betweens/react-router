@@ -105,12 +105,7 @@ const Banner = () => (
             margin={`${isSmallScreen ? 20 : 20}px 0`}
             fontSize={isSmallScreen ? '80%' : null}
           >
-            Components are the heart of React's powerful, declarative
-            programming model. React Router is a collection of <b>navigational
-            components</b> that compose declaratively with your application. Whether
-            you want to have <b>bookmarkable URLs</b> for your web app or a composable
-            way to navigate in <b>React Native</b>, React Router works wherever React
-            is rendering--so take your pick!
+           组件是React强大的声明性核心编程模型。 React路由器是导航的集合组件与您的应用程序声明组成。 是否您希望为您的网络应用程序或可组合的元素添加可收藏的网址在React Native中导航的方式，React Router可以在任何地方使用React渲染 - 所以请选择！
           </Block>
 
           <Row>
