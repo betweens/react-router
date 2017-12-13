@@ -1,10 +1,10 @@
 # &lt;StaticRouter>
 
-A [`<Router>`](Router.md) that never changes location.
+[`<Router>`](Router.md)永远不会改变位置。
 
-This can be useful in server-side rendering scenarios when the user isn't actually clicking around, so the location never actually changes. Hence, the name: static. It's also useful in simple tests when you just need to plug in a location and make assertions on the render output.
+当用户没有真正点击时，这在服务器端渲染场景中可能很有用，所以这个位置从来没有真正改变。 因此，名称：静态。 当你只需要插入一个位置并在渲染输出上进行断言时，它在简单测试中也很有用。
 
-Here's an example node server that sends a 302 status code for [`<Redirect>`](Redirect.md)s and regular HTML for other requests:
+下面是一个示例节点服务器，它为[`<Redirect>`](Redirect.md)发送302状态码，并为其他请求发送常规HTML：
 
 ```js
 import { createServer } from 'http'
@@ -23,7 +23,7 @@ createServer((req, res) => {
     </StaticRouter>
   )
 
-  // context.url will contain the URL to redirect to if a <Redirect> was used
+  // 如果使用<Redirect>，context.url将包含重定向到的URL
   if (context.url) {
     res.writeHead(302, {
       Location: context.url
@@ -38,7 +38,8 @@ createServer((req, res) => {
 
 ## basename: string
 
-The base URL for all locations. A properly formatted basename should have a leading slash, but no trailing slash.
+所有locations的基础 URL。 格式正确的基本名应该有一个前导斜杠,但不能有斜线。
+
 
 ```js
 <StaticRouter basename="/calendar">
@@ -48,7 +49,7 @@ The base URL for all locations. A properly formatted basename should have a lead
 
 ## location: string
 
-The URL the server received, probably `req.url` on a node server.
+服务器收到的URL，可能是节点服务器上的`req.url`.
 
 ```js
 <StaticRouter location={req.url}>
@@ -58,7 +59,7 @@ The URL the server received, probably `req.url` on a node server.
 
 ## location: object
 
-A location object shaped like `{ pathname, search, hash, state }`
+一个形似`{ pathname, search, hash, state }`的位置对象
 
 ```js
 <StaticRouter location={{ pathname: '/bubblegum' }}>
@@ -68,7 +69,7 @@ A location object shaped like `{ pathname, search, hash, state }`
 
 ## context: object
 
-A plain JavaScript object. During the render, components can add properties to the object to store information about the render.
+一个普通的JavaScript对象。 在渲染过程中，组件可以向对象添加属性以存储有关渲染的信息。
 
 ```js
 const context = {}
@@ -77,9 +78,9 @@ const context = {}
 </StaticRouter>
 ```
 
-When a `<Route>` matches, it will pass the context object to the component it renders as the `staticContext` prop. Check out the [Server Rendering guide](../../../react-router-dom/docs/guides/server-rendering.md) for more information on how to do this yourself.
+当一个“<Route>”匹配时，它会将上下文对象传递给它作为staticContext的prop所呈现的组件。 查看[服务器渲染指南](../../../react-router-dom/docs/guides/server-rendering.md)）以获得更多关于如何自己完成的信息。
 
-After the render, these properties can be used to to configure the server's response.
+在渲染之后，可以使用这些属性来配置服务器的响应.
 
 ```js
 if(context.status === '404') {

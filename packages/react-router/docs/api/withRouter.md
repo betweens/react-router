@@ -1,6 +1,6 @@
 # withRouter
 
-You can get access to the [`history`](./history.md) object's properties and the closest [`<Route>`](./Route.md)'s [`match`](./match.md) via the `withRouter` higher-order component. `withRouter` will pass updated `match`, `location`, and `history` props to the wrapped component whenever it renders.
+您可以通过`withRouter`高阶组件访问[`history`](./history.md)对象的属性和最接近的[`<Route>`](./Route.md)'s [`match`](./match.md)。 当router渲染时，`withRouter`会将更新后的`match`，`location`和`history`props传递给包裹组件。
 
 ```js
 import React from 'react'
@@ -24,14 +24,14 @@ class ShowTheLocation extends React.Component {
   }
 }
 
-// Create a new component that is "connected" (to borrow redux
-// terminology) to the router.
+// 创建一个"connected"的新组件（借用redux术语）到router。
+
 const ShowTheLocationWithRouter = withRouter(ShowTheLocation)
 ```
 
 #### Important Note
 
-`withRouter` does not subscribe to location changes like React Redux's `connect` does for state changes.  Instead, re-renders after location changes propagate out from the `<Router>` component.  This means that `withRouter` does _not_ re-render on route transitions unless its parent component re-renders. If you are using `withRouter` to prevent updates from being blocked by `shouldComponentUpdate`, it is important that `withRouter` wraps the component that implements `shouldComponentUpdate`. For example, when using Redux:
+`withRouter`不会订阅像React Redux的`connect`这样的位置更改，以便进行状态更改。 相反，在位置更改从“<Router>”组件传出之后重新渲染。 这意味着`withRouter`不会在路由转换上重新渲染，除非它的父组件重新渲染。 如果使用`withRouter`来防止更新被`shouldComponentUpdate`阻塞，那么``withRouter``包装实现`shouldComponentUpdate`的组件是很重要的。 例如，使用Redux时：
 
 ```js
 // This gets around shouldComponentUpdate
@@ -42,26 +42,25 @@ compose(
   connect(...)
 )(MyComponent)
 
-// This does not
+// 这不是
 connect(...)(withRouter(MyComponent))
-// nor
+// 也不是
 compose(
   connect(...),
   withRouter
 )(MyComponent)
 ```
 
-See [this guide](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/guides/blocked-updates.md) for more information.
+请参阅 [this guide](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/guides/blocked-updates.md) 了解更多信息.
 
-#### Static Methods and Properties
+#### 静态方法和属性
 
-All non-react specific static methods and properties of the wrapped component are automatically copied to the
-"connected" component.
+所有non-react特定的静态方法和封装组件的属性都会自动复制到"connected"组件。
 
 ## Component.WrappedComponent
 
-The wrapped component is exposed as the static property `WrappedComponent` on the returned component, which can be used
-for testing the component in isolation, among other things.
+被包装的组件在返回的组件上被公开为静态属性`WrappedComponent`，可以被使用
+用于独立测试组件等等。
 
 ```js
 // MyComponent.js
@@ -74,7 +73,7 @@ render(<MyComponent.WrappedComponent location={{...}} ... />)
 
 ## wrappedComponentRef: func
 
-A function that will be passed as the `ref` prop to the wrapped component.
+一个将作为`ref`prop传递给包装组件的函数。
 
 ```js
 class Container extends React.Component {

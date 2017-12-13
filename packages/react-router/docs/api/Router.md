@@ -1,6 +1,6 @@
 # &lt;Router>
 
-The common low-level interface for all router components. Typically apps will use one of the high-level routers instead:
+所有router组件的通用底层接口. 通常,应用程序将使用其中一个高级router:
 
 - [`<BrowserRouter>`](../../../react-router-dom/docs/api/BrowserRouter.md)
 - [`<HashRouter>`](../../../react-router-dom/docs/api/HashRouter.md)
@@ -8,8 +8,8 @@ The common low-level interface for all router components. Typically apps will us
 - [`<NativeRouter>`](../../../react-router-native/docs/api/NativeRouter.md)
 - [`<StaticRouter>`](./StaticRouter.md)
 
-The most common use-case for using the low-level `<Router>` is to
-synchronize a custom history with a state management lib like Redux or Mobx. Note that this is not required to use state management libs alongside React Router, it's only for deep integration.
+使用低级别的<Router>最常见的用例是
+将自定义历史记录与Redux或Mobx之类的状态管理库同步。 请注意，与React Router一起使用状态管理库并不是必需的，它仅用于深度集成。
 
 ```js
 import { Router } from 'react-router'
@@ -24,7 +24,7 @@ const history = createBrowserHistory()
 
 ## history: object
 
-A [`history`](https://github.com/ReactTraining/history) object to use for navigation.
+一个 [`history`](https://github.com/ReactTraining/history) 用于navigation的对象.
 
 ```js
 import createBrowserHistory from 'history/createBrowserHistory'
