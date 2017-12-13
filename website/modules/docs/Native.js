@@ -18,61 +18,61 @@ export default {
   ],
   examples: [
     {
-      label: 'Basic',
+      label: '基本',
       slug: 'Basic',
       appetizeURL: 'https://appetize.io/embed/kq15zzzz6u328rvg49bdu75vum',
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../../../packages/react-router-native/examples/BasicExample.js')
     },
     {
-      label: 'URL Parameters',
+      label: 'URL 参数',
       slug: 'url-params',
       appetizeURL: 'https://appetize.io/embed/gudt9n7654nawc85ufn4fa78uw',
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../../../packages/react-router-native/examples/Params.js')
     },
     {
-      label: 'Redirects (Auth)',
+      label: '重定向 (Auth)',
       slug: 'auth-workflow',
       appetizeURL: 'https://appetize.io/embed/77urbu5w9g111yeauhe59cac6w',
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../../../packages/react-router-native/examples/Auth.js')
     },
     {
-      label: 'Custom Link',
+      label: '传统链接',
       slug: 'custom-link',
       appetizeURL: 'https://appetize.io/embed/0tyewzy1w3d47n8bqvfwfw7k88',
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../../../packages/react-router-native/examples/CustomLink.js')
     },
     {
-      label: 'Preventing Transitions',
+      label: '组织跳转',
       slug: 'preventing-transitions',
       appetizeURL: 'https://appetize.io/embed/vdudnenr9rzv323tty60th51ag',
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../../../packages/react-router-native/examples/PreventingTransitions.js')
     },
     {
-      label: 'No Match',
+      label: '找不到匹配',
       slug: 'no-match',
       appetizeURL: 'https://appetize.io/embed/cbp7d494t1g9jvb7fvgjt4fun4',
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../../../packages/react-router-native/examples/NoMatch.js')
     },
     {
-      label: 'Recursive Paths',
+      label: '路径递归',
       slug: 'recursive-paths',
       appetizeURL: 'https://appetize.io/embed/7jtxzvxhrqgg48ffy6nj5n5gmc',
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../../../packages/react-router-native/examples/Recursive.js')
     },
     {
-      label: 'Sidebar',
+      label: '侧边栏',
       slug: 'sidebar',
       appetizeURL: 'https://appetize.io/embed/t91v5044ay0vktbvbwhw580ax0',
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../../../packages/react-router-native/examples/Sidebar.js')
     },
     {
-      label: 'Ambiguous Matches',
+      label: '模糊匹配',
       slug: 'ambiguous-matches',
       appetizeURL: 'https://appetize.io/embed/0xzpxy9vxb9z64zd3auyz1c3h0',
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../../../packages/react-router-native/examples/Ambiguous.js')
     },
     {
-      label: 'Route Config',
+      label: '路由配置',
       slug: 'route-config',
       appetizeURL: 'https://appetize.io/embed/kb15rx5ngmuf78hh3hefg7kh5g',
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../../../packages/react-router-native/examples/RouteConfig.js')

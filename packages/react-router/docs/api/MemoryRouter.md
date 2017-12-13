@@ -1,6 +1,6 @@
 # &lt;MemoryRouter>
 
-A [`<Router>`](Router.md) that keeps the history of your "URL" in memory (does not read or write to the address bar). Useful in tests and non-browser environments like [React Native](https://facebook.github.io/react-native/).
+在内存中保存"URL"的历史的[`<Router>`](Router.md)（不读取或写入地址栏）。 在测试和非浏览器环境（如[React Native](https://facebook.github.io/react-native/)）中很有用。
 
 ```js
 import { MemoryRouter } from 'react-router'
@@ -12,7 +12,7 @@ import { MemoryRouter } from 'react-router'
 
 ## initialEntries: array
 
-An array of `location`s in the history stack. These may be full-blown location objects with `{ pathname, search, hash, state }` or simple string URLs.
+历史堆栈中的`location`数组。 这些可能是完整的的位置对象，具有`{ pathname, search, hash, state }`或简单的字符串URL。
 
 ```js
 <MemoryRouter
@@ -25,15 +25,15 @@ An array of `location`s in the history stack. These may be full-blown location o
 
 ## initialIndex: number
 
-The initial location's index in the array of `initialEntries`.
+initialEntries数组中的初始位置索引。
 
 ## getUserConfirmation: func
 
-A function to use to confirm navigation. You must use this option when using `<MemoryRouter>` directly with a `<Prompt>`.
+initialEntries数组中的初始位置索引。
 
 ## keyLength: number
 
-The length of `location.key`. Defaults to 6.
+`location.key`的长度。 默认为6。
 
 ```js
 <MemoryRouter keyLength={12}/>
@@ -41,4 +41,4 @@ The length of `location.key`. Defaults to 6.
 
 ## children: node
 
-A [single child element](https://facebook.github.io/react/docs/react-api.html#react.children.only) to render.
+一个 [单个子元素](https://facebook.github.io/react/docs/react-api.html#react.children.only) 来渲染。

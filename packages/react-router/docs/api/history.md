@@ -1,32 +1,32 @@
 # history
 
-The term "history" and "`history` object" in this documentation refers to [the `history` package](https://github.com/ReactTraining/history), which is one of only 2 major dependencies of React Router (besides React itself), and which provides several different implementations for managing session history in JavaScript in various environments.
+本文档中的“history”和“history`对象是指[the `history` package](https://github.com/ReactTraining/history)，它是React Router（除了React本身）的两个主要依赖之一，它提供了几种不同的实现来管理JavaScript中的会话history环境。
 
-The following terms are also used:
+以下术语也被使用:
 
-- "browser history" - A DOM-specific implementation, useful in web browsers that support the HTML5 history API
-- "hash history" - A DOM-specific implementation for legacy web browsers
-- "memory history" - An in-memory history implementation, useful in testing and non-DOM environments like React Native
+- "browser history" - 一个DOM特定的实现，在支持HTML5历史API的Web浏览器中很有用
+- "hash history" - 传统Web浏览器的DOM特定实现
+- "memory history" - 内存中的历史实现，在测试和React Native等非DOM环境中非常有用
 
-`history` objects typically have the following properties and methods:
+`history` 对象通常具有以下属性和方法:
 
-- `length` - (number) The number of entries in the history stack
-- `action` - (string) The current action (`PUSH`, `REPLACE`, or `POP`)
-- `location` - (object) The current location. May have the following properties:
-  - `pathname` - (string) The path of the URL
+- `length` - (number) 历史堆栈中的条目数量
+- `action` - (string) 当前行为(`PUSH`, `REPLACE`, or `POP`)
+- `location` - (object) 当前位置。 可能有以下属性:
+  - `pathname` - (string) URL的路径
   - `search` - (string) The URL query string
   - `hash` - (string) The URL hash fragment
-  - `state` - (object) location-specific state that was provided to e.g. `push(path, state)` when this location was pushed onto the stack. Only available in browser and memory history.
-- `push(path, [state])` - (function) Pushes a new entry onto the history stack
-- `replace(path, [state])` - (function) Replaces the current entry on the history stack
-- `go(n)` - (function) Moves the pointer in the history stack by `n` entries
-- `goBack()` - (function) Equivalent to `go(-1)`
-- `goForward()` - (function) Equivalent to `go(1)`
+  - `state` - (object) 提供给例如特定位置的状态 push（path，state）`当这个位置被推入堆栈时。 仅在浏览器和内存历史记录中可用。
+- `push(path, [state])` - (function) 将新条目推入历史堆栈
+- `replace(path, [state])` - (function) 替换历史堆栈上的当前条目
+- `go(n)` - (function) 通过`n`条目移动历史堆栈中的指针
+- `goBack()` - (function) 相当于 `go(-1)`
+- `goForward()` - (function) 相当于 `go(1)`
 - `block(prompt)` - (function) Prevents navigation (see [the history docs](https://github.com/ReactTraining/history#blocking-transitions))
 
-## history is mutable
+## history 是可变的
 
-The history object is mutable. Therefore it is recommended to access the [`location`](./location.md) from the render props of [`<Route>`](./Route.md), not from `history.location`. This ensures your assumptions about React are correct in lifecycle hooks. For example:
+历史对象是可变的。 因此，建议从[`location`](./location.md)的渲染道具访问[`<Route>`](./Route.md)，而不是从`history.location`。 这可以确保您对React的假设在生命周期钩子中是正确的。 例如：
 
 ```js
 class Comp extends React.Component {
@@ -42,4 +42,4 @@ class Comp extends React.Component {
 <Route component={Comp}/>
 ```
 
-Additional properties may also be present depending on the implementation you're using. Please refer to [the history documentation](https://github.com/ReactTraining/history#properties) for more details.
+根据您使用的实施情况，其他属性也可能存在。 有关更多详细信息，请参阅[the history documentation](https://github.com/ReactTraining/history#properties) for more details.。

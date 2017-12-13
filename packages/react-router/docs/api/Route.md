@@ -1,11 +1,11 @@
 # &lt;Route>
 
-The Route component is perhaps the most important component in React
-Router to understand and learn to use well. Its most basic
-responsibility is to render some UI when a [location](./location.md)
-matches the route's `path`.
+Route组件也许是React中最重要的组件
+路由器了解并学习使用好。 它最基本的
+当一个[location](./location.md)
+匹配route的`path`。
 
-Consider the following code:
+考虑下面的代码:
 
 ```js
 import { BrowserRouter as Router, Route } from 'react-router-dom'
@@ -18,7 +18,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 </Router>
 ```
 
-If the location of the app is `/` then the UI hierarchy will be something like:
+如果应用程序的位置是`/`，那么UI层次结构就是类似的:
 
 ```html
 <div>
@@ -27,7 +27,7 @@ If the location of the app is `/` then the UI hierarchy will be something like:
 </div>
 ```
 
-And if the location of the app is `/news` then the UI hierarchy will be:
+如果应用程序的位置是`/news`，那么UI层次将是:
 
 ```html
 <div>
@@ -36,21 +36,21 @@ And if the location of the app is `/news` then the UI hierarchy will be:
 </div>
 ```
 
-The "react-empty" comments are just implementation details of React's `null` rendering. But for our purposes, it is instructive. A Route is always technically "rendered" even though its rendering `null`. As soon as the app location matches the route's path, your component will be rendered.
+"react-empty"注释只是React的`null`渲染的实现细节。 但是对于我们的目的来说，这是有益的。 即使渲染为null，路由也总是在技术上“渲染”。 只要应用程序位置匹配路径的路径，您的组件将被渲染。
 
 ## Route render methods
 
-There are 3 ways to render something with a `<Route>`:
+有三种方法可以用`<Route>`来渲染东西:
 
 - [`<Route component>`](#component)
 - [`<Route render>`](#render-func)
 - [`<Route children>`](#children-func)
 
-Each is useful in different circumstances. You should use only one of these props on a given `<Route>`. See their explanations below to understand why you have 3 options. Most of the time you'll use `component`.
+每个在不同的情况下都有用。 你只能在给定的<Route>中使用这些props中的一个。 看下面的解释，了解为什么你有3个选项。 大多数时候你会使用`component`。
 
 ## Route props
 
-All three [render methods](#route-render-methods) will be passed the same three route props
+三个[render methods](#route-render-methods)都将通过相同的三个route props
 
 - [match](./match.md)
 - [location](./location.md)
@@ -58,8 +58,8 @@ All three [render methods](#route-render-methods) will be passed the same three 
 
 ## component
 
-A React component to render only when the location matches. It will be
-rendered with [route props](#route-props).
+React组件只在位置匹配时渲染。 这将是
+呈现与[route props](#route-props).
 
 ```js
 <Route path="/user/:username" component={User}/>
@@ -69,13 +69,13 @@ const User = ({ match }) => {
 }
 ```
 
-When you use `component` (instead of `render` or `children`, below) the router uses [`React.createElement`](https://facebook.github.io/react/docs/react-api.html#createelement) to create a new [React element](https://facebook.github.io/react/docs/rendering-elements.html) from the given component. That means if you provide an inline function to the `component` prop, you would create a new component every render. This results in the existing component unmounting and the new component mounting instead of just updating the existing component. When using an inline function for inline rendering, use the `render` or the `children` prop (below).
+当你使用`component`（而不是`render`或`children`，下面）时，router使用[`React.createElement`](https://facebook.github.io/react/docs/react-api.html#createelement)从给定的组件创建一个新的[React element](https://facebook.github.io/react/docs/rendering-elements.html)。 这意味着如果你为`component`提供了一个内联函数，你将会在每个渲染中创建一个新的组件。 这会导致现有的组件卸载和新的组件安装，而不是只更新现有的组件。 当使用内联函数进行内联渲染时，使用`render`或`children`prop（如下）。
 
 ## render: func
 
-This allows for convenient inline rendering and wrapping without the undesired remounting explained above.
+这允许在上面解释的不需要的重新安装的情况下进行方便的内联渲染和包装。
 
-Instead of having a new [React element](https://facebook.github.io/react/docs/rendering-elements.html) created for you using the [`component`](#component) prop, you can pass in a function to be called when the location matches. The `render` prop receives all the same [route props](#route-props) as the `component` render prop.
+而不是使用[`component`](#component) prop为你创建一个新的[React element](https://facebook.github.io/react/docs/rendering-elements.html)，你可以传入一个函数，当位置匹配时被调用。 `render` prop收到所有与`component`渲染prop相同的[route props](#route-props)。
 
 ```js
 // convenient inline rendering
@@ -93,13 +93,13 @@ const FadingRoute = ({ component: Component, ...rest }) => (
 <FadingRoute path="/cool" component={Something}/>
 ```
 
-**Warning:** `<Route component>` takes precedence over `<Route render>` so don't use both in the same `<Route>`.
+**警告**:`<Route component>`优先于`<Route render>`,所以不要在同一个`<Route>`中使用它们。
 
 ## children: func
 
-Sometimes you need to render whether the path matches the location or not. In these cases, you can use the function `children` prop. It works exactly like `render` except that it gets called whether there is a match or not.
+有时您需要呈现路径是否匹配位置。 在这些情况下，你可以使用函数`children` prop。 它的工作原理与`render`完全一样，不同之处在于它是否匹配。
 
-The `children` render prop receives all the same [route props](#route-props) as the `component` and `render` methods, except when a route fails to match the URL, then `match` is `null`. This allows you to dynamically adjust your UI based on whether or not the route matches. Here we're adding an `active` class if the route matches
+`children` render prop和`component`和`render`方法都是一样的，除非route不匹配URL，否则`match`是`null`。 这使您可以根据路线是否匹配动态调整您的用户界面。 如果路线匹配，我们将添加一个"active"类
 
 ```js
 <ul>
@@ -116,23 +116,22 @@ const ListItemLink = ({ to, ...rest }) => (
 )
 ```
 
-This could also be useful for animations:
+这对动画也是有用的:
 
 ```js
 <Route children={({ match, ...rest }) => (
-  {/* Animate will always render, so you can use lifecycles
-      to animate its child in and out */}
+  {/* Animate将始终呈现，因此您可以使用生命周期让child反复进出 */}
   <Animate>
     {match && <Something {...rest}/>}
   </Animate>
 )}/>
 ```
 
-**Warning:** Both `<Route component>` and `<Route render>` take precendence over `<Route children>` so don't use more than one in the same `<Route>`.
+**警告**: <Route组件>和`<Route render>优先于`<Route children>`，所以不要在同一个<Route>中使用多个组件。
 
 ## path: string
 
-Any valid URL path that [`path-to-regexp`](https://www.npmjs.com/package/path-to-regexp) understands.
+任何有效的URL路径[`path-to-regexp`](https://www.npmjs.com/package/path-to-regexp)理解。
 
 ```js
 <Route path="/users/:id" component={User}/>
@@ -142,7 +141,7 @@ Routes without a `path` _always_ match.
 
 ## exact: bool
 
-When `true`, will only match if the path matches the `location.pathname` _exactly_.
+当`true`时，只有路径匹配`location.pathname` _exactly_时才匹配。
 
 ```js
 <Route exact path="/one" component={About}/>
@@ -155,7 +154,7 @@ When `true`, will only match if the path matches the `location.pathname` _exactl
 
 ## strict: bool
 
-When `true`, a `path` that has a trailing slash will only match a `location.pathname` with a trailing slash. This has no effect when there are additional URL segments in the `location.pathname`.
+当'true'时，具有尾部斜线的'path'将只与'location.pathname'匹配。 当`location.pathname`中有附加的URL段时，这不起作用。
 
 ```js
 <Route strict path="/one/" component={About}/>
@@ -167,7 +166,7 @@ When `true`, a `path` that has a trailing slash will only match a `location.path
 | `/one/` | `/one/` | yes |
 | `/one/` | `/one/two` | yes |
 
-**Warning:** `strict` can be used to enforce that a `location.pathname` has no trailing slash, but in order to do this both `strict` and `exact` must be `true`.
+**警告**: `strict`可以用来强制`location.pathname`没有结尾的斜线，但是为了做到这一点`strict`和`exact`必须是`true`。
 
 ```js
 <Route exact strict path="/one" component={About}/>
@@ -181,16 +180,16 @@ When `true`, a `path` that has a trailing slash will only match a `location.path
 
 ## location: object
 
-A `<Route>` element tries to match its `path` to the current history location (usually the current browser URL).
-However, a [`location`](location.md) with a different `pathname` can also be passed for matching.
+一个`<Route>`元素试图匹配它的`path`到当前的历史位置（通常是当前浏览器的URL）。
+然而，具有不同“路径名”的[`location`]（location.md）也可以被传递用于匹配。
 
-This is useful in cases when you need to match a `<Route>` to a location other than the current history location, as shown in the [Animated Transitions](https://reacttraining.com/react-router/web/example/animated-transitions) example.
+如果您需要将“<Route>”匹配到除当前历史记录位置以外的位置，则这很有用，如[动画过度](https://reacttraining.com/react-router/web/example/animated-transitions)例子。
 
-If a `<Route>` element is wrapped in a `<Switch>` and matches the location passed to the `<Switch>` (or the current history location), then the `location` prop passed to `<Route>` will be overridden by the one used by the `<Switch>` (given [here](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/modules/Switch.js#L51)).
+如果一个`<Route>`元素被封装在一个`<Switch>`中并匹配传递给`<Switch>`（或当前历史位置）的位置，那么传递给``Route' 将会被`<Switch>`(given [here](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/modules/Switch.js#L51))使用的覆盖
 
 ## sensitive: bool
 
-When `true`, will match if the path is __case sensitive__.
+当'true'时，如果路径是__case sensitive__，将匹配。
 
 ```js
 <Route sensitive path="/one" component={About}/>
