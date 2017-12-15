@@ -1,6 +1,6 @@
 # &lt;Link>
 
-Provides declarative, accessible navigation around your application.
+在应用程序里面提供声明式的可访问导航.
 
 ```js
 import { Link } from 'react-router-dom'
@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 ## to: string
 
-A string representation of the location to link to, created by concatenating the location's pathname, search, and hash properties.
+链接位置的字符串表示，通过连接位置的路径名，搜索和哈希属性创建。
 
 ```js
 <Link to='/courses?sort=name'/>
@@ -18,10 +18,10 @@ A string representation of the location to link to, created by concatenating the
 
 ## to: object
 
-An object that can have any of the following properties:
-  * `pathname`: A string representing the path to link to.
-  * `search`: A string represenation of query parameters.
-  * `hash`: A hash to put in the URL, e.g. `#a-hash`.
+可以具有以下任何属性的对象:
+  * `pathname`: 表示要链接到的路径的字符串.
+  * `search`: 查询参数的字符串表示形式.
+  * `hash`: 一个散列在URL中, 例如:  `#a-hash`.
   * `state`: State to persist to the `location`.
 
 ```js
@@ -35,7 +35,7 @@ An object that can have any of the following properties:
 
 ## replace: bool
 
-When `true`, clicking the link will replace the current entry in the history stack instead of adding a new one.
+当replace为`true`时，单击链接将替换历史堆栈中的当前条目而不是添加新条目。
 
 ```js
 <Link to="/courses" replace />
@@ -43,7 +43,7 @@ When `true`, clicking the link will replace the current entry in the history sta
 
 ## innerRef: function
 
-Allows access to the underlying `ref` of the component
+允许访问组件的底层`ref`
 
 ```js
 

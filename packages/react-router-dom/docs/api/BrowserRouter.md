@@ -1,6 +1,6 @@
 # &lt;BrowserRouter>
 
-A [`<Router>`](../../../react-router/docs/api/Router.md) that uses the HTML5 history API (`pushState`, `replaceState` and the `popstate` event) to keep your UI in sync with the URL.
+[`<Router>`](../../../react-router/docs/api/Router.md)使用HTML5历史记录API (`pushState`, `replaceState` and the `popstate` event)保持您的用户界面与URL同步。
 
 ```js
 import { BrowserRouter } from 'react-router-dom'
@@ -17,7 +17,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 ## basename: string
 
-The base URL for all locations. If your app is served from a sub-directory on your server, you'll want to set this to the sub-directory. A properly formatted basename should have a leading slash, but no trailing slash.
+所有位置的根网址,如果您的应用程序是从服务器上的子目录提供的，则需要将其设置为子目录。 格式正确的基本名应该有一个前导的斜线，但不能有斜线。
 
 ```js
 <BrowserRouter basename="/calendar"/>
@@ -26,7 +26,7 @@ The base URL for all locations. If your app is served from a sub-directory on yo
 
 ## getUserConfirmation: func
 
-A function to use to confirm navigation. Defaults to using [`window.confirm`](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm).
+用于确认导航的功能。 默认使用 [`window.confirm`](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm).
 
 ```js
 // this is the default behavior
@@ -40,7 +40,7 @@ const getConfirmation = (message, callback) => {
 
 ## forceRefresh: bool
 
-If `true` the router will use full page refreshes on page navigation. You probably only want this in [browsers that don't support the HTML5 history API](http://caniuse.com/#feat=history).
+如果为true，路由器将在页面导航中使用整页刷新。 您可能只想在[不支持HTML5历史API的浏览器](http://caniuse.com/#feat=history)中使用。
 
 ```js
 const supportsHistory = 'pushState' in window.history
