@@ -1,10 +1,10 @@
 # Quick Start
 
 
-The easiest way to get started with a React web project is with a tool called [Create React App][crapp], a Facebook project with a ton of community help.
+开始使用React Web项目最简单的方法是使用名为[Create React App][crapp]的工具，这是一个拥有大量社区帮助的Facebook项目。
 
-First install create-react-app if you don't already have it, and then
-make a new project with it.
+首先安装create-react-app，如果你还没有，那么
+用它建立一个新的项目。
 
 ```sh
 npm install -g create-react-app
@@ -14,16 +14,15 @@ cd demo-app
 
 ## Installation
 
-React Router DOM is [published to npm](https://npm.im/react-router-dom) so you can install it with either `npm` or [`yarn`](https://yarnpkg.com). Create React App uses yarn, so that's what we'll use.
+React Router DOM是[published to npm](https://npm.im/react-router-dom),所以你可以用`npm`或[`yarn`](https://yarnpkg.com)来安装它。 创建React App使用yarn，这就是我们将要使用的。
 
 ```sh
 yarn add react-router-dom
-# or, if you're not using yarn
+# 或者，如果你不使用yarn
 npm install react-router-dom
 ```
 
-Now you can copy/paste any of the examples into `src/App.js`. Here's the
-basic one:
+现在，您可以将任何示例复制/粘贴到`src/App.js`中。 这是基本的一个例子:
 
 ```jsx
 import React from 'react'

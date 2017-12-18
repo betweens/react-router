@@ -1,6 +1,6 @@
 # &lt;NavLink>
 
-A special version of the [`<Link>`](Link.md) that will add styling attributes to the rendered element when it matches the current URL.
+[`<Link>`](Link.md)的特殊版本，当它与当前URL相匹配时，将会为呈现的元素添加样式属性
 
 ```js
 import { NavLink } from 'react-router-dom'
@@ -10,7 +10,8 @@ import { NavLink } from 'react-router-dom'
 
 ## activeClassName: string
 
-The class to give the element when it is active. The default given class is `active`. This will be joined with the `className` prop.
+active时给予元素的类。 给定的默认类是“active”。 这将被加入`className`的prop。
+
 
 ```js
 <NavLink
@@ -21,7 +22,7 @@ The class to give the element when it is active. The default given class is `act
 
 ## activeStyle: object
 
-The styles to apply to the element when it is active.
+处于活动状态的元素的样式.
 
 ```js
 <NavLink
@@ -35,7 +36,7 @@ The styles to apply to the element when it is active.
 
 ## exact: bool
 
-When `true`, the active class/style will only be applied if the location is matched exactly.
+当`true`时，只有当位置完全匹配时，才会应用活动的类/样式。
 
 ```js
 <NavLink
@@ -46,7 +47,7 @@ When `true`, the active class/style will only be applied if the location is matc
 
 ## strict: bool
 
-When `true`, the trailing slash on a location's `pathname` will be taken into consideration when determining if the location matches the current URL. See the [`<Route strict>`](../../../react-router/docs/api/Route.md#strict-bool) documentation for more information.
+如果为`true`，则在确定位置是否与当前URL匹配时，将考虑位置`pathname`的尾部斜线。 请参阅[`<Route strict>`](../../../react-router/docs/api/Route.md#strict-bool) documentation for more information文档以获取更多信息。
 
 ```js
 <NavLink
@@ -57,10 +58,10 @@ When `true`, the trailing slash on a location's `pathname` will be taken into co
 
 ## isActive: func
 
-A function to add extra logic for determining whether the link is active. This should be used if you want to do more than verify that the link's pathname matches the current URL's `pathname`.
+添加额外逻辑以确定链接是否处于活动状态的功能, 如果您不想验证链接的路径名是否与当前URL的路径名匹配,那么应该使用这个.
 
 ```js
-// only consider an event active if its event id is an odd number
+// 如果事件ID是奇数，则只考虑事件激活
 const oddEvent = (match, location) => {
   if (!match) {
     return false
@@ -77,5 +78,6 @@ const oddEvent = (match, location) => {
 
 ## location: object
 
-The [`isActive`](#isactive-func) compares the current history location (usually the current browser URL).
-To compare to a different location, a [`location`](../../../react-router/docs/api/location.md) can be passed.
+
+[`isActive`](#isactive-func)比较当前的历史位置（通常是当前的浏览器URL）。
+为了比较不同的位置，[`location`](../../../react-router/docs/api/location.md)可以通过。

@@ -12,7 +12,7 @@ import { NativeRouter } from 'react-router-native'
 
 ## getUserConfirmation: func
 
-A function to use to confirm navigation.
+用于确认导航的功能.
 
 ```js
 import { Alert } from 'react-native'
