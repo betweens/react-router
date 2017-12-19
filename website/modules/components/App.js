@@ -8,6 +8,7 @@ import BrowserRouter from '../../../packages/react-router-dom/BrowserRouter'
 import { Switch, Route } from 'react-router-dom'
 
 import DelegateMarkdownLinks from './DelegateMarkdownLinks'
+/*import Test from './Test.js'*/
 import Home from './Home'
 import Environment from './Environment'
 

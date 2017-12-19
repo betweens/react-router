@@ -7,7 +7,7 @@ import Footer from '../Footer'
 export default () => (
   <Block>
     <Header/>
-    <Video/>
+    {/*<Video/>*/}
     <Footer/>
   </Block>
 )

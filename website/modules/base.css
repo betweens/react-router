@@ -53,32 +53,40 @@ pre, code { font-family: Menlo, monospace; line-height: 1.5 }
 
 /* have messed with these! */
 
-.api-doc-wrapper {
+/*.api-doc-wrapper {
   background: rgb(45, 45, 45);
-}
+}*/
 
 .api-doc {
   padding-left: 20px;
   display: block;
-  box-shadow:
+ /* box-shadow:
     inset 500px 0 #fff,
-    inset 1020px 0 rgb(45, 45, 45);
+    inset 1020px 0 rgb(45, 45, 45);*/
   min-height: 100vh;
 }
-markdown > pre {
+/*markdown > pre {
   background: rgb(45, 45, 45);
   float: left;
   clear: right;
   white-space: pre-wrap;
-}
+}*/
 
 /* all the things we render *except* headers and <pre>, add them as needed! */
-markdown > *:not(pre):not(h1):not(h2) {
+/*markdown > *:not(pre):not(h1):not(h2) {
   display: block;
   clear: both;
   float: left;
   width: 500px;
   padding-right: 40px;
+}*/
+
+markdown > pre {
+  float: none;
+  padding: 20px;
+  border-radius: 6px;
+  overflow: auto;
+  background: rgb(45, 45, 45);
 }
 
 markdown:after {
