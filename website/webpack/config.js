@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 module.exports = {
-  devtool: 'source-map',
+  // devtool: 'source-map',
 
   entry: {
     app: path.resolve(__dirname, '../modules/index.js'),
