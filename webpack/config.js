@@ -45,7 +45,7 @@ module.exports = {
     alias: {
       'react-router': path.resolve(
         __dirname,
-        '../../packages/react-router'
+        '../packages/react-router'
       ),
       'react-router-dom': path.resolve(
         __dirname,
@@ -81,7 +81,7 @@ module.exports = {
       },
       {
         test: /\.(gif|jpe?g|png|ico)$/,
-        loader: 'url?limit=10000'
+        loader: 'url?limit=1'
       }
     ]
   },
