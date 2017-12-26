@@ -4,6 +4,8 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
+console.log(path.resolve(__dirname,'../packages/react-router'));
+console.log(path.resolve( __dirname,'../modules/ReactRouterDOMShim'));
 module.exports = {
   // devtool: 'source-map',
 
@@ -16,7 +18,7 @@ module.exports = {
     path: path.resolve(__dirname, '../build'),
     filename: `bundle-[chunkHash].js`,
     chunkFileName: `[name]-[chunkHash].js`,
-    publicPath: '/'
+    publicPath: 'http://www.no-forget.com/'
   },
 
   plugins: [
@@ -43,14 +45,8 @@ module.exports = {
 
   resolve: {
     alias: {
-      'react-router': path.resolve(
-        __dirname,
-        '../packages/react-router'
-      ),
-      'react-router-dom': path.resolve(
-        __dirname,
-        '../modules/ReactRouterDOMShim'
-      )
+      'react-router': path.resolve(__dirname,'../packages/react-router'),
+      'react-router-dom': path.resolve( __dirname,'../modules/ReactRouterDOMShim' )
     }
   },
 
