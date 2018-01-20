@@ -21,6 +21,7 @@
 ## 文档
 
 **[在这里查看文档](https://reacttraining.com/react-router)**
+**[react-dom-router V4 中文文档](http://www.no-forget.com/http://www.no-forget.com/react-router)
 
 [从2.x / 3.x迁移?](/packages/react-router/docs/guides/migrating.md)
 
