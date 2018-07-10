@@ -16,7 +16,7 @@ const base = document.querySelector('base')
 const baseHref = base ? base.getAttribute('href') : '/'
 
 const App = () => (
-  <BrowserRouter basename={baseHref.replace(/\/$/, '')}>
+  <BrowserRouter basename="/react-router">
     <DelegateMarkdownLinks>
       <Switch>
         <Route path="/" exact={true} component={Home} />
