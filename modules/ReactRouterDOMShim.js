@@ -13,7 +13,7 @@ export {
   Switch,
   matchPath,
   withRouter
-} from '../packages/react-router-dom'
+} from '../packages/react-router-dom/modules'
 
 // Need to shim <BrowserRouter> so people can copy/paste
 // examples into create-react-app but our docs site already
