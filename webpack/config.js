@@ -18,7 +18,7 @@ module.exports = {
     path: path.resolve(__dirname, '../build'),
     filename: `bundle-[chunkHash].js`,
     chunkFileName: `[name]-[chunkHash].js`,
-    publicPath: 'https://www.no-forget.com/'
+    publicPath: 'https://www.no-forget.com/react-router'
   },
 
   plugins: [
